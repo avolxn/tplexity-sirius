@@ -227,7 +227,7 @@ data/
 ./experiments
 experiments/
 # poetry.lock  # Uncommented: CI requires this file
-pyproject.toml
+# pyproject.toml  # Uncommented: Poetry requires this file
 *.session
 *.session-journal
 my_venv/

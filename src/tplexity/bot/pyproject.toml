@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "tplexity-bot"
+version = "0.1.0"
+description = "Telegram Bot микросервис"
+authors = ["Tplexity Team"]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<4.0.0"
+fastapi = ">=0.121.1,<0.122.0"
+uvicorn = {extras = ["standard"], version = ">=0.38.0,<0.39.0"}
+pydantic-settings = ">=2.12.0,<3.0.0"
+httpx = ">=0.27.0,<0.28.0"
+aiogram = ">=3.0.0,<4.0.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+

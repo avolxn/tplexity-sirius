@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "tplexity-retriever"
+version = "0.1.0"
+description = "Retriever микросервис для гибридного поиска"
+authors = ["Tplexity Team"]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<4.0.0"
+fastapi = ">=0.121.1,<0.122.0"
+uvicorn = {extras = ["standard"], version = ">=0.38.0,<0.39.0"}
+pydantic-settings = ">=2.12.0,<3.0.0"
+qdrant-client = ">=1.7.0,<2.0.0"
+rank-bm25 = ">=0.2.2,<0.3.0"
+sentence-transformers = ">=3.0.0,<4.0.0"
+numpy = ">=2.1.0"
+transformers = ">=4.57.1,<5.0.0"
+fastembed = ">=0.7.3,<0.8.0"
+einops = ">=0.8.1,<0.9.0"
+pymorphy3 = ">=2.0.6,<3.0.0"
+openai = ">=2.8.0,<3.0.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
