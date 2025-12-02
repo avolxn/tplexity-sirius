@@ -20,7 +20,7 @@ class LLMRequest:
     def __post_init__(self):
         """Вычисляем cache_key после инициализации"""
         if not self.cache_key:
-            text_hash = hashlib.md5(self.post_text.encode()).hexdigest() # noqa: S324
+            text_hash = hashlib.md5(self.post_text.encode()).hexdigest()  # noqa: S324
             self.cache_key = f"{self.llm_provider}:{text_hash}"
 
 
@@ -100,7 +100,7 @@ class LLMBatcher:
         """
         provider = llm_provider or self.default_llm_provider
 
-        cache_key = f"{provider}:{hashlib.md5(post_text.encode()).hexdigest()}" # noqa: S324
+        cache_key = f"{provider}:{hashlib.md5(post_text.encode()).hexdigest()}"  # noqa: S324
         if cache_key in self.cache:
             relevance_days, raw_response = self.cache[cache_key]
             logger.debug(f"💾 [llm_batcher] Результат из кэша для поста (длина: {len(post_text)} символов)")
