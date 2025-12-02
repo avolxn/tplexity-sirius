@@ -1,0 +1,14 @@
+{
+  "query_id": 0,
+  "question": "Запущено ли сообщество для инвесторов в приложении Альфа-Инвестиций только для Android или планируется и для iOS?",
+  "n_contexts": 5,
+  "latency_ms": 44348.700284957886,
+  "relevance": 1.0,
+  "faithfulness": 1.0,
+  "completeness": 1.0,
+  "off_topic_rate": 0.0,
+  "context_precision": 1.0,
+  "context_recall": 1.0,
+  "judge_errors": false,
+  "composite_score": 1.0
+}

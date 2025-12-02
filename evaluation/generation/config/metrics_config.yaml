@@ -1,0 +1,12 @@
+# Конфигурация метрик
+metrics:
+  - relevance
+  - faithfulness
+  - completeness
+  - off_topic_rate
+  - latency
+
+# Пороговые значения для метрик (опционально)
+thresholds:
+  relevance: 0.7
+  faithfulness: 0.8

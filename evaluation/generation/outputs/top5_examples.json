@@ -1,0 +1,72 @@
+[
+  {
+    "query_id": 0,
+    "question": "Запущено ли сообщество для инвесторов в приложении Альфа-Инвестиций только для Android или планируется и для iOS?",
+    "n_contexts": 5,
+    "latency_ms": 44348.700284957886,
+    "relevance": 1.0,
+    "faithfulness": 1.0,
+    "completeness": 1.0,
+    "off_topic_rate": 0.0,
+    "context_precision": 1.0,
+    "context_recall": 1.0,
+    "judge_errors": false,
+    "composite_score": 1.0
+  },
+  {
+    "query_id": 2,
+    "question": "Какие функции и возможности предоставляет Альфа-Инвестиции своим пользователям через новое сообщество?",
+    "n_contexts": 5,
+    "latency_ms": 25924.14879798889,
+    "relevance": 1.0,
+    "faithfulness": 1.0,
+    "completeness": 1.0,
+    "off_topic_rate": 0.0,
+    "context_precision": 1.0,
+    "context_recall": 1.0,
+    "judge_errors": false,
+    "composite_score": 1.0
+  },
+  {
+    "query_id": 8,
+    "question": "Выложила ли компания ДОМ.РФ официальный ценовой диапазон для IPO, и до какого времени можно участвовать в размещении?",
+    "n_contexts": 5,
+    "latency_ms": 23173.64263534546,
+    "relevance": 1.0,
+    "faithfulness": 1.0,
+    "completeness": 1.0,
+    "off_topic_rate": 0.0,
+    "context_precision": 1.0,
+    "context_recall": 1.0,
+    "judge_errors": false,
+    "composite_score": 1.0
+  },
+  {
+    "query_id": 10,
+    "question": "Какие факторы повлияли на снижение прибыли МТС-банка за девять месяцев, несмотря на рост в III квартале?",
+    "n_contexts": 5,
+    "latency_ms": 27723.32215309143,
+    "relevance": 1.0,
+    "faithfulness": 1.0,
+    "completeness": 1.0,
+    "off_topic_rate": 0.0,
+    "context_precision": 1.0,
+    "context_recall": 1.0,
+    "judge_errors": false,
+    "composite_score": 1.0
+  },
+  {
+    "query_id": 11,
+    "question": "Почему акции Северстали и ИКС 5 показали рост, несмотря на общее давление на нефтяной сектор и геополитическую неопределённость?",
+    "n_contexts": 5,
+    "latency_ms": 25458.69779586792,
+    "relevance": 1.0,
+    "faithfulness": 1.0,
+    "completeness": 1.0,
+    "off_topic_rate": 0.0,
+    "context_precision": 1.0,
+    "context_recall": 1.0,
+    "judge_errors": false,
+    "composite_score": 1.0
+  }
+]

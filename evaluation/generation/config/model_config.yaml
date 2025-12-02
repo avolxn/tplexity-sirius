@@ -1,0 +1,15 @@
+# Конфигурация для модели inference и judge
+inference_endpoint: ""  # если пусто => использовать mock
+inference_api_key: ""
+inference_timeout: 120  # секунды
+
+judge:
+  provider: qwen  # qwen, openai, mock (по умолчанию qwen)
+  model: ""  # для qwen игнорируется, для openai - название модели
+  api_key: ""  # для qwen игнорируется, для openai - API ключ
+  temperature: 0.0
+  max_retries: 2
+  timeout: 120
+
+batch_size: 10  # размер батча для обработки запросов
+

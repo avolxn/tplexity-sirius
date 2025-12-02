@@ -1,0 +1,72 @@
+[
+  {
+    "query_id": 5,
+    "question": "Какие текущие тренды влияют на спрос на акции компаний жилищного сектора в России?",
+    "n_contexts": 5,
+    "latency_ms": 50309.34977531433,
+    "relevance": 1.0,
+    "faithfulness": 0.9,
+    "completeness": 0.9,
+    "off_topic_rate": 0.1,
+    "context_precision": 0.9,
+    "context_recall": 1.0,
+    "judge_errors": false,
+    "composite_score": 0.9249999999999999
+  },
+  {
+    "query_id": 3,
+    "question": "Какие риски могут возникнуть у инвесторов при участии в открытых сообществах с пользовательским контентом?",
+    "n_contexts": 5,
+    "latency_ms": 50336.320638656616,
+    "relevance": 1.0,
+    "faithfulness": 0.9,
+    "completeness": 0.95,
+    "off_topic_rate": 0.1,
+    "context_precision": 0.9,
+    "context_recall": 1.0,
+    "judge_errors": false,
+    "composite_score": 0.9374999999999999
+  },
+  {
+    "query_id": 1,
+    "question": "Какие текущие тренды в области инвестиционных сообществ и социальных платформ для частных инвесторов в России?",
+    "n_contexts": 5,
+    "latency_ms": 27673.18606376648,
+    "relevance": 1.0,
+    "faithfulness": 0.9,
+    "completeness": 0.95,
+    "off_topic_rate": 0.05,
+    "context_precision": 0.9,
+    "context_recall": 1.0,
+    "judge_errors": false,
+    "composite_score": 0.95
+  },
+  {
+    "query_id": 4,
+    "question": "Почему банковские структуры всё чаще запускают социальные платформы для инвесторов, а не просто предоставляют аналитику?",
+    "n_contexts": 5,
+    "latency_ms": 27760.380744934082,
+    "relevance": 1.0,
+    "faithfulness": 0.9,
+    "completeness": 0.95,
+    "off_topic_rate": 0.05,
+    "context_precision": 0.9,
+    "context_recall": 1.0,
+    "judge_errors": false,
+    "composite_score": 0.95
+  },
+  {
+    "query_id": 6,
+    "question": "Какова текущая финансовая устойчивость и структура активов ДОМ.РФ по данным открытых источников?",
+    "n_contexts": 5,
+    "latency_ms": 27789.464712142944,
+    "relevance": 1.0,
+    "faithfulness": 0.9,
+    "completeness": 0.95,
+    "off_topic_rate": 0.05,
+    "context_precision": 0.9,
+    "context_recall": 1.0,
+    "judge_errors": false,
+    "composite_score": 0.95
+  }
+]

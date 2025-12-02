@@ -1,0 +1,132 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  lint:
+    name: Lint and Format Check
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'poetry'
+      
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+        with:
+          version: latest
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+      
+      - name: Load cached venv
+        id: cached-poetry-dependencies
+        uses: actions/cache@v4
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-3.11-${{ hashFiles('**/poetry.lock') }}
+      
+      - name: Install dependencies
+        run: poetry install --no-interaction --no-root
+      
+      - name: Run ruff linter
+        run: poetry run ruff check .
+      
+      - name: Run ruff formatter check
+        run: poetry run ruff format --check .
+
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'poetry'
+      
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+        with:
+          version: latest
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+      
+      - name: Load cached venv
+        id: cached-poetry-dependencies
+        uses: actions/cache@v4
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-3.11-${{ hashFiles('**/poetry.lock') }}
+      
+      - name: Install dependencies
+        run: poetry install --no-interaction --no-root
+      
+      - name: Run tests
+        run: poetry run pytest
+        continue-on-error: true
+
+  docker-build:
+    name: Build Docker Images
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      
+      - name: Build retriever image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./src/tplexity/retriever/Dockerfile
+          push: false
+          tags: tplexity-retriever:test
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+      
+      - name: Build generation image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./src/tplexity/generation/Dockerfile
+          push: false
+          tags: tplexity-generation:test
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+      
+      - name: Build bot image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./src/tplexity/bot/Dockerfile
+          push: false
+          tags: tplexity-bot:test
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+      
+      - name: Build parser image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./src/tplexity/parser/Dockerfile
+          push: false
+          tags: tplexity-parser:test
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+

@@ -1,0 +1,44 @@
+{
+  "relevance": {
+    "mean": 1.0,
+    "median": 1.0,
+    "std": NaN,
+    "min": 1.0,
+    "max": 1.0,
+    "count": 1
+  },
+  "faithfulness": {
+    "mean": 0.95,
+    "median": 0.95,
+    "std": NaN,
+    "min": 0.95,
+    "max": 0.95,
+    "count": 1
+  },
+  "completeness": {
+    "mean": 1.0,
+    "median": 1.0,
+    "std": NaN,
+    "min": 1.0,
+    "max": 1.0,
+    "count": 1
+  },
+  "off_topic_rate": {
+    "mean": 0.0,
+    "median": 0.0,
+    "std": NaN,
+    "min": 0.0,
+    "max": 0.0,
+    "count": 1
+  },
+  "latency_ms": {
+    "mean": 15282.034873962402,
+    "median": 15282.034873962402,
+    "std": NaN,
+    "min": 15282.034873962402,
+    "max": 15282.034873962402,
+    "count": 1
+  },
+  "total_examples": 1,
+  "judge_errors": 0
+}
