@@ -7,8 +7,8 @@ on:
     branches: [ main, develop ]
 
 jobs:
-  lint:
-    name: Lint and Format Check
+  test:
+    name: Lint and Test
     runs-on: ubuntu-latest
     
     steps:
@@ -19,7 +19,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'poetry'
       
       - name: Install Poetry
         uses: snok/install-poetry@v1
@@ -27,13 +26,6 @@ jobs:
           version: latest
           virtualenvs-create: true
           virtualenvs-in-project: true
-      
-      - name: Load cached venv
-        id: cached-poetry-dependencies
-        uses: actions/cache@v4
-        with:
-          path: .venv
-          key: venv-${{ runner.os }}-3.11-${{ hashFiles('**/poetry.lock') }}
       
       - name: Install dependencies
         run: poetry install --no-interaction --no-root
@@ -43,39 +35,7 @@ jobs:
       
       - name: Run ruff formatter check
         run: poetry run ruff format --check .
-
-  test:
-    name: Run Tests
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-          cache: 'poetry'
-      
-      - name: Install Poetry
-        uses: snok/install-poetry@v1
-        with:
-          version: latest
-          virtualenvs-create: true
-          virtualenvs-in-project: true
-      
-      - name: Load cached venv
-        id: cached-poetry-dependencies
-        uses: actions/cache@v4
-        with:
-          path: .venv
-          key: venv-${{ runner.os }}-3.11-${{ hashFiles('**/poetry.lock') }}
-      
-      - name: Install dependencies
-        run: poetry install --no-interaction --no-root
       
       - name: Run tests
         run: poetry run pytest
         continue-on-error: true
-
