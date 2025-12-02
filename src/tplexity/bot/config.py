@@ -17,12 +17,9 @@ class Settings(BaseSettings):
         return v
 
     generation_api_url: str = "http://localhost:8012"
-    
+
     # Список доступных моделей (можно переопределить через переменную окружения)
-    available_models: str = Field(
-        default="qwen,chatgpt,deepseek",
-        description="Список доступных моделей через запятую"
-    )
+    available_models: str = Field(default="qwen,chatgpt,deepseek", description="Список доступных моделей через запятую")
 
     @property
     def available_models_list(self) -> list[str]:

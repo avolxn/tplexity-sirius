@@ -44,4 +44,3 @@ async def generate(request: GenerateRequest) -> GenerateResponse:
     except Exception as e:
         logger.error(f"❌ [llm_client][routers] Ошибка при генерации: {e}")
         raise HTTPException(status_code=500, detail=f"Ошибка при генерации: {str(e)}")
-

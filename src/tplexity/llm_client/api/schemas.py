@@ -1,5 +1,3 @@
-from typing import Any
-
 from pydantic import BaseModel, Field
 
 
@@ -25,4 +23,3 @@ class GenerateResponse(BaseModel):
     answer: str = Field(..., description="Сгенерированный ответ")
     provider: str = Field(..., description="Использованный провайдер LLM")
     model: str = Field(..., description="Использованная модель")
-

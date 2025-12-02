@@ -250,9 +250,7 @@ async def markup_last_month(days: int = 14):
                 channel_titles[channel] = channel
 
         for channel_idx, channel in enumerate(channels_list, 1):
-            logger.info(
-                f"\n{'='*60}\n" f"📥 Обработка канала {channel_idx}/{len(channels_list)}: {channel}\n" f"{'='*60}"
-            )
+            logger.info(f"\n{'=' * 60}\n📥 Обработка канала {channel_idx}/{len(channels_list)}: {channel}\n{'=' * 60}")
 
             try:
                 logger.info(f"📥 Скачивание постов из {channel}...")
@@ -284,9 +282,7 @@ async def markup_last_month(days: int = 14):
 
                 total_posts_downloaded += len(messages_with_text)
                 logger.info(
-                    f"📊 Канал {channel}: "
-                    f"скачано {len(all_messages)} постов, "
-                    f"{len(messages_with_text)} с текстом"
+                    f"📊 Канал {channel}: скачано {len(all_messages)} постов, {len(messages_with_text)} с текстом"
                 )
 
                 if messages_with_text:
@@ -310,14 +306,14 @@ async def markup_last_month(days: int = 14):
                 total_errors += 1
 
         logger.info(
-            f"\n{'='*60}\n"
+            f"\n{'=' * 60}\n"
             f"✅ Разметка данных завершена!\n"
-            f"{'='*60}\n"
+            f"{'=' * 60}\n"
             f"📊 Статистика:\n"
             f"  - Всего скачано постов: {total_posts_downloaded}\n"
             f"  - Успешно отправлено в БД: {total_posts_sent}\n"
             f"  - Ошибок: {total_errors}\n"
-            f"{'='*60}"
+            f"{'=' * 60}"
         )
 
     except Exception as e:

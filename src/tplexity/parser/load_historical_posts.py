@@ -244,9 +244,9 @@ async def load_historical_posts():
 
         for channel_idx, channel in enumerate(channels_list, 1):
             logger.info(
-                f"\n{'='*60}\n"
+                f"\n{'=' * 60}\n"
                 f"📥 [parser][load_historical_posts] Обработка канала {channel_idx}/{len(channels_list)}: {channel}\n"
-                f"{'='*60}"
+                f"{'=' * 60}"
             )
 
             try:
@@ -307,14 +307,14 @@ async def load_historical_posts():
                 total_errors += 1
 
         logger.info(
-            f"\n{'='*60}\n"
+            f"\n{'=' * 60}\n"
             f"✅ [parser][load_historical_posts] Загрузка завершена!\n"
-            f"{'='*60}\n"
+            f"{'=' * 60}\n"
             f"📊 Статистика:\n"
             f"  - Всего скачано постов: {total_posts_downloaded}\n"
             f"  - Успешно отправлено в БД: {total_posts_sent}\n"
             f"  - Ошибок: {total_errors}\n"
-            f"{'='*60}"
+            f"{'=' * 60}"
         )
 
     except Exception as e:

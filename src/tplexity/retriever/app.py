@@ -7,7 +7,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from tplexity.retriever.api import router
 from tplexity.retriever.api.dependencies import get_retriever
 
-
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 

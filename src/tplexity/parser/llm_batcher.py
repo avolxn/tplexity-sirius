@@ -20,7 +20,7 @@ class LLMRequest:
     def __post_init__(self):
         """Вычисляем cache_key после инициализации"""
         if not self.cache_key:
-            text_hash = hashlib.md5(self.post_text.encode()).hexdigest()
+            text_hash = hashlib.md5(self.post_text.encode()).hexdigest() # noqa: S324
             self.cache_key = f"{self.llm_provider}:{text_hash}"
 
 
@@ -73,7 +73,7 @@ class LLMBatcher:
         self.is_running = True
         self.batch_task = asyncio.create_task(self._batch_processor())
         logger.info(
-            f"✅ [llm_batcher] Батчер запущен (batch_size={self.batch_size}, " f"batch_timeout={self.batch_timeout}s)"
+            f"✅ [llm_batcher] Батчер запущен (batch_size={self.batch_size}, batch_timeout={self.batch_timeout}s)"
         )
 
     async def stop(self):
@@ -100,7 +100,7 @@ class LLMBatcher:
         """
         provider = llm_provider or self.default_llm_provider
 
-        cache_key = f"{provider}:{hashlib.md5(post_text.encode()).hexdigest()}"
+        cache_key = f"{provider}:{hashlib.md5(post_text.encode()).hexdigest()}" # noqa: S324
         if cache_key in self.cache:
             relevance_days, raw_response = self.cache[cache_key]
             logger.debug(f"💾 [llm_batcher] Результат из кэша для поста (длина: {len(post_text)} символов)")

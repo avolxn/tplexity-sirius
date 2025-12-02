@@ -17,7 +17,6 @@ from qdrant_client.models import (
     VectorParams,
 )
 
-from tplexity.retriever.config import settings
 from tplexity.retriever.dense_embedding import get_embedding_model
 from tplexity.retriever.sparse_embedding import get_bm25_model
 

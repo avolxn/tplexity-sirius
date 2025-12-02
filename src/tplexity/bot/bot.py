@@ -449,7 +449,6 @@ async def echo_handler(message: Message, bot: Bot, generation_client: Generation
             ]
             reply_markup = InlineKeyboardMarkup(inline_keyboard=keyboard)
 
-            message_key = f"detailed_answer_{message.message_id}"
             _message_data[message.message_id] = {
                 "detailed_answer": answer_with_citations,
                 "sources_text": sources_text,

@@ -435,9 +435,9 @@ class TelegramDownloader:
         """
         for channel in channel_usernames:
             try:
-                print(f"\n{'='*60}")
+                print(f"\n{'=' * 60}")
                 print(f"Обработка канала: {channel}")
-                print(f"{'='*60}")
+                print(f"{'=' * 60}")
 
                 info = await self.get_channel_info(channel)
                 print(f"Канал: {info.get('title', channel)}")

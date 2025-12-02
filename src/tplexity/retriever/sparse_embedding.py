@@ -1,15 +1,5 @@
 import logging
-import os
 import re
-from pathlib import Path
-
-cache_dir = Path.home() / ".cache"
-if "HF_HOME" not in os.environ:
-    os.environ["HF_HOME"] = str(cache_dir / "huggingface")
-if "HUGGINGFACE_HUB_CACHE" not in os.environ:
-    os.environ["HUGGINGFACE_HUB_CACHE"] = str(cache_dir / "huggingface" / "hub")
-if "FASTEMBED_CACHE_PATH" not in os.environ:
-    os.environ["FASTEMBED_CACHE_PATH"] = str(cache_dir / "fastembed")
 
 from fastembed import SparseTextEmbedding
 from pymorphy3 import MorphAnalyzer

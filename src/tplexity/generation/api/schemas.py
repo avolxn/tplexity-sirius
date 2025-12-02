@@ -52,9 +52,7 @@ class GenerateRequest(BaseModel):
         v_lower = v.lower().strip()
         if v_lower not in available_models:
             available_str = ", ".join(f"'{m}'" for m in available_models)
-            raise ValueError(
-                f"Провайдер '{v}' не найден в списке доступных моделей. " f"Доступные модели: {available_str}"
-            )
+            raise ValueError(f"Провайдер '{v}' не найден в списке доступных моделей. Доступные модели: {available_str}")
 
         return v_lower
 
@@ -121,9 +119,7 @@ class GenerateShortAnswerRequest(BaseModel):
         v_lower = v.lower().strip()
         if v_lower not in available_models:
             available_str = ", ".join(f"'{m}'" for m in available_models)
-            raise ValueError(
-                f"Провайдер '{v}' не найден в списке доступных моделей. " f"Доступные модели: {available_str}"
-            )
+            raise ValueError(f"Провайдер '{v}' не найден в списке доступных моделей. Доступные модели: {available_str}")
 
         return v_lower
 
